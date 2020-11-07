@@ -23,10 +23,11 @@ public class BasicArrayUtils {
      */
     public static String[] reverse(String[] stringArray) {
         String[] reversedArray = new String[stringArray.length];
-        int reversedStringIndex = stringArray.length - 1;
+        int reversedArrayIndex = stringArray.length - 1;
+
         for (int i = 0; i < stringArray.length; i++) {
-            reversedArray[reversedStringIndex] = stringArray[i];
-            reversedStringIndex--;
+            reversedArray[reversedArrayIndex] = stringArray[i];
+            reversedArrayIndex--;
         }
 
         return reversedArray;
@@ -39,8 +40,7 @@ public class BasicArrayUtils {
     public static String getFirstLetterOfEachElement(String[] stringArray) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < stringArray.length; i++) {
-            char firstLetter = stringArray[i].charAt(0);
-            stringBuilder.append(firstLetter);
+            stringBuilder.append(stringArray[i].charAt(0));
         }
 
         return stringBuilder.toString();

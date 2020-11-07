@@ -8,7 +8,13 @@ public class ArrayUtils {
      * Given an array of objects, named `objectArray`, and an object `objectToCount`, return the number of times the `objectToCount` appears in the `objectArray`
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
-        return null;
+        int matches = 0;
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].equals(objectToCount)) {
+                matches++;
+            }
+        }
+        return matches;
     }
 
     /**
@@ -30,14 +36,23 @@ public class ArrayUtils {
         return null;
     }
 
-
     /**
      * @param objectArray an array of any type of Object
      * @return the least frequently occurring object in the array
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
-        return null;
+        Object leastCommonObject = new Object();
+
+        int leastNumberOfOccurrences = 99999;
+        for (int i = 0; i < objectArray.length; i++) {
+            int numberOfOccurrences = getNumberOfOccurrences(objectArray, objectArray[i]);
+            if (numberOfOccurrences < leastNumberOfOccurrences) {
+                leastCommonObject = objectArray[i];
+                leastNumberOfOccurrences = numberOfOccurrences;
+            }
+        }
+        return leastCommonObject;
     }
 
     /**

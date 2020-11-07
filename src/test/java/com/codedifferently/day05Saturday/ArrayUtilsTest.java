@@ -57,7 +57,7 @@ public class ArrayUtilsTest {
         Integer expected = 2;
         Integer[] inputArray = {1,1,2,3,3,3,4,4,4,4};
 
-        // When
+        // When2
         Integer actual = (Integer) ArrayUtils.getLeastCommon(inputArray);
 
         // Then

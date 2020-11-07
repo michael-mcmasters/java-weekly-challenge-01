@@ -6,8 +6,24 @@ public class BasicStringUtils {
      * @return string with identical content, and the first character capitalized
      */
     public static String camelCase(String str) {
+
+//        for (int i = 0; i < str.length(); i++) {
+//            char letter = str.charAt(i);
+//            if ()
+//        }
+//
+//        for (char character : str.toCharArray()) {
+//
+//        }
+
         return null;
     }
+
+//    private static String[] getWords(String str) {
+//        for (char letter : str.toCharArray()) {
+//
+//        }
+//    }
 
     /**
      * @param str string input from client
