@@ -8,35 +8,15 @@ public class BasicStringUtils {
     // Note! The test for this function doesn't want camelCase words.
     // It wants the first letter of each word to be capitalized.
     public static String camelCase(String str) {
-//        StringBuilder sb = new StringBuilder();
-//        for (int i = 0; i < str.length(); i++) {
-//            char character = str.charAt(i);
-//            if (i == 0 || Character.isWhitespace(str.charAt(i - 1))) {
-//                character = Character.toUpperCase(character);
-//            }
-//            sb.append(character);
-//        }
-//        return sb.toString();
-
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
-            char currentChar = str.charAt(i);
-            char prevChar = getPrevCharacter(str, i);
-            if (i == 0 || Character.isWhitespace(prevChar)) {
-                currentChar = Character.toUpperCase(currentChar);
+            char character = str.charAt(i);
+            if (i == 0 || Character.isWhitespace(str.charAt(i - 1))) {
+                character = Character.toUpperCase(character);
             }
-            sb.append(currentChar);
-    }
-        return sb.toString();
-    }
-
-    private static char getPrevCharacter(String str, int index) {
-        int prevCharIndex = index - 1;
-        if (prevCharIndex >= 0) {
-            return str.charAt(prevCharIndex);
+            sb.append(character);
         }
-        // Return current character if prev index is out of range
-        return str.charAt(index);
+        return sb.toString();
     }
 
     private static String[] getWords(String str) {
