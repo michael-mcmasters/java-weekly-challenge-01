@@ -5,25 +5,24 @@ public class BasicStringUtils {
      * @param str string input from client
      * @return string with identical content, and the first character capitalized
      */
+    // Note! The test for this function doesn't want camelCase words.
+    // It wants the first letter of each word to be capitalized.
     public static String camelCase(String str) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            char character = str.charAt(i);
+            if (i == 0 || Character.isWhitespace(str.charAt(i - 1))) {
+                character = Character.toUpperCase(character);
+            }
+            sb.append(character);
+        }
+        return sb.toString();
+    }
 
-//        for (int i = 0; i < str.length(); i++) {
-//            char letter = str.charAt(i);
-//            if ()
-//        }
-//
-//        for (char character : str.toCharArray()) {
-//
-//        }
-
+    private static String[] getWords(String str) {
         return null;
     }
 
-//    private static String[] getWords(String str) {
-//        for (char letter : str.toCharArray()) {
-//
-//        }
-//    }
 
     /**
      * @param str string input from client

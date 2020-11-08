@@ -5,6 +5,7 @@ import org.junit.Test;
 
 public class BasicStringUtilsTest {
     @Test
+    // Test isn't asking for camelCase. It's asking for each word to have a capital first letter.
     public void camelCaseTest() {
         // Given
         String input = "she sells sea shells";
