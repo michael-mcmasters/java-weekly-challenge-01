@@ -19,15 +19,14 @@ public class BasicStringUtils {
 //        return sb.toString();
 
         StringBuilder sb = new StringBuilder();
-        int index = 0;
-        for (char currentChar : str.toCharArray()) {
-            char prevChar = getPrevCharacter(str, index);
-            if (index == 0 || Character.isWhitespace(prevChar)) {
+        for (int i = 0; i < str.length(); i++) {
+            char currentChar = str.charAt(i);
+            char prevChar = getPrevCharacter(str, i);
+            if (i == 0 || Character.isWhitespace(prevChar)) {
                 currentChar = Character.toUpperCase(currentChar);
             }
             sb.append(currentChar);
-            index++;
-        }
+    }
         return sb.toString();
     }
 
@@ -36,7 +35,8 @@ public class BasicStringUtils {
         if (prevCharIndex >= 0) {
             return str.charAt(prevCharIndex);
         }
-        return 'z';
+        // Return current character if prev index is out of range
+        return str.charAt(index);
     }
 
     private static String[] getWords(String str) {
